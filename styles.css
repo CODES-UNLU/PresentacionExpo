@@ -1379,3 +1379,518 @@ body::before {
     }
 }
 
+/* TV Optimizations */
+@media (min-width: 1920px) {
+    /* Full HD TV Optimizations */
+    body {
+        cursor: none; /* Hide cursor on TV */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Enhanced brightness for TV displays */
+    .slide-title,
+    .subject-title,
+    .title-name {
+        filter: brightness(1.2) contrast(1.1);
+    }
+    
+    /* Stronger glow effects for TV */
+    .slide-title i,
+    .subject-title i,
+    .title-name i {
+        filter: brightness(1.3) drop-shadow(0 0 15px currentColor);
+    }
+    
+    /* Enhanced node animation for TV */
+    body::after {
+        background-size: 300px 300px;
+        opacity: 0.4;
+        filter: brightness(1.2);
+    }
+    
+    /* Prevent accidental exits */
+    html, body {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 2560px) {
+    /* 4K TV Optimizations */
+    body {
+        cursor: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Maximum brightness for 4K displays */
+    .slide-title,
+    .subject-title,
+    .title-name {
+        filter: brightness(1.4) contrast(1.2);
+    }
+    
+    /* Maximum glow effects for 4K */
+    .slide-title i,
+    .subject-title i,
+    .title-name i {
+        filter: brightness(1.5) drop-shadow(0 0 20px currentColor);
+    }
+    
+    /* Enhanced node animation for 4K */
+    body::after {
+        background-size: 400px 400px;
+        opacity: 0.5;
+        filter: brightness(1.3);
+    }
+    
+    /* Prevent accidental exits */
+    html, body {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Presentation Mode - Hide cursor and prevent interactions */
+@media (min-width: 1920px) {
+    * {
+        cursor: none !important;
+    }
+    
+    /* Disable text selection */
+    * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Prevent context menu */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Auto-fullscreen detection and optimization */
+@media (display-mode: fullscreen) {
+    body {
+        cursor: none;
+        overflow: hidden;
+    }
+    
+    .slide-container {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/* TV-specific brightness and contrast adjustments */
+@media (min-width: 1920px) and (max-width: 2559px) {
+    /* Standard TV brightness */
+    body {
+        filter: brightness(1.1) contrast(1.05);
+    }
+}
+
+@media (min-width: 2560px) {
+    /* High-end TV brightness */
+    body {
+        filter: brightness(1.2) contrast(1.1);
+    }
+}
+
+/* Prevent screen saver and power management */
+@media (min-width: 1920px) {
+    html {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+/* Motivational Slide Styles */
+.motivational-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.motivational-item {
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+}
+
+.motivational-item.animate {
+    animation: motivationalAppear 0.8s ease forwards;
+}
+
+.motivational-item:nth-child(1).animate {
+    animation-delay: 0.5s;
+}
+
+.motivational-item:nth-child(2).animate {
+    animation-delay: 1.0s;
+}
+
+.motivational-item:nth-child(3).animate {
+    animation-delay: 1.5s;
+}
+
+.motivational-item:nth-child(4).animate {
+    animation-delay: 2.0s;
+}
+
+.motivational-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00ffff;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff88);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    opacity: 0;
+    transform: scale(0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.motivational-text.animate {
+    animation: motivationalTextGlow 1s ease forwards;
+}
+
+.motivational-text i {
+    color: #ff00ff;
+    text-shadow: 0 0 15px #ff00ff;
+    opacity: 0;
+    transform: rotate(-10deg);
+    font-size: 1.4rem;
+}
+
+.motivational-text i.animate {
+    animation: motivationalIconAppear 0.6s ease forwards;
+}
+
+.final-message {
+    margin-top: 4rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    padding: 2rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid #00ff88;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.4);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.final-message.animate {
+    animation: finalMessageAppear 1s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.final-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #00ff88;
+    text-align: center;
+    margin: 0;
+    background: linear-gradient(45deg, #00ff88, #00ffff, #ff00ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 255, 136, 0.8);
+    opacity: 0;
+    transform: scale(0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.final-text.animate {
+    animation: finalTextGlow 1.2s ease forwards;
+}
+
+.final-text i {
+    color: #ff00ff;
+    text-shadow: 0 0 20px #ff00ff;
+    opacity: 0;
+    transform: scale(0.5);
+    font-size: 2rem;
+}
+
+.final-text i.animate {
+    animation: finalIconPulse 1s ease forwards;
+}
+
+/* Motivational Animations */
+@keyframes motivationalAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes motivationalTextGlow {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes motivationalIconAppear {
+    0% {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes finalMessageAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finalTextGlow {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes finalIconPulse {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments for motivational slide */
+@media (max-width: 768px) {
+    .motivational-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
+        max-width: 90%;
+    }
+    
+    .motivational-item {
+        padding: 1rem 1.5rem;
+        min-height: 100px;
+    }
+    
+    .motivational-text {
+        font-size: 1.4rem;
+    }
+    
+    .motivational-text i {
+        font-size: 1.2rem;
+    }
+    
+    .final-text {
+        font-size: 1.8rem;
+    }
+    
+    .final-text i {
+        font-size: 1.6rem;
+    }
+    
+    .final-message {
+        margin-top: 3rem;
+        padding: 1.5rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .motivational-container {
+        gap: 1rem;
+        margin: 1.5rem 0;
+        max-width: 95%;
+    }
+    
+    .motivational-item {
+        padding: 0.8rem 1rem;
+        min-height: 80px;
+    }
+    
+    .motivational-text {
+        font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+    
+    .motivational-text i {
+        font-size: 1rem;
+    }
+    
+    .final-text {
+        font-size: 1.5rem;
+        gap: 0.8rem;
+    }
+    
+    .final-text i {
+        font-size: 1.4rem;
+    }
+    
+    .final-message {
+        margin-top: 2rem;
+        padding: 1rem;
+        max-width: 95%;
+    }
+}
+
+/* TV optimizations for motivational slide */
+@media (min-width: 1920px) {
+    .motivational-container {
+        gap: 3rem;
+        margin: 4rem 0;
+        max-width: 1000px;
+    }
+    
+    .motivational-item {
+        padding: 2rem 3rem;
+        min-height: 150px;
+    }
+    
+    .motivational-text {
+        font-size: 2.5rem;
+        filter: brightness(1.2) contrast(1.1);
+        gap: 1.2rem;
+    }
+    
+    .motivational-text i {
+        font-size: 2rem;
+    }
+    
+    .final-text {
+        font-size: 3rem;
+        filter: brightness(1.3) contrast(1.1);
+        gap: 1.5rem;
+    }
+    
+    .final-text i {
+        font-size: 2.5rem;
+    }
+    
+    .final-message {
+        margin-top: 5rem;
+        padding: 3rem;
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .motivational-container {
+        gap: 4rem;
+        margin: 5rem 0;
+        max-width: 1200px;
+    }
+    
+    .motivational-item {
+        padding: 2.5rem 4rem;
+        min-height: 180px;
+    }
+    
+    .motivational-text {
+        font-size: 3rem;
+        filter: brightness(1.4) contrast(1.2);
+        gap: 1.5rem;
+    }
+    
+    .motivational-text i {
+        font-size: 2.5rem;
+    }
+    
+    .final-text {
+        font-size: 3.5rem;
+        filter: brightness(1.5) contrast(1.2);
+        gap: 2rem;
+    }
+    
+    .final-text i {
+        font-size: 3rem;
+    }
+    
+    .final-message {
+        margin-top: 6rem;
+        padding: 4rem;
+        max-width: 1000px;
+    }
+}
+
