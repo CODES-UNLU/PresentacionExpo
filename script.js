@@ -1,6 +1,6 @@
 // Presentation State
 let currentSlideIndex = 0;
-const totalSlides = 23; // Updated to include motivational slide
+const totalSlides = 27; // Updated to include incumbencias slides
 let autoPlayInterval;
 
 // Timing configuration
@@ -93,6 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
         controls.style.display = 'none';
     }
 });
+
+
 
 // TV Optimizations
 function initTVOptimizations() {

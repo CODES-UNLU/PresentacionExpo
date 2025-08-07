@@ -416,9 +416,10 @@ body::before {
     transition: all 0.3s ease;
 }
 
-/* Large logo styles for slides 2 and 12 */
+/* Large logo styles for slides 2, 12 and 14 */
 #slide2 .logo-item .logo-img,
-#slide12 .logo-item .logo-img {
+#slide12 .logo-item .logo-img,
+#slide14 .logo-item .logo-img {
     width: 90vw;
     height: 90vh;
     object-fit: contain;
@@ -428,7 +429,8 @@ body::before {
 }
 
 #slide2 .logo-item .logo-img.animate,
-#slide12 .logo-item .logo-img.animate {
+#slide12 .logo-item .logo-img.animate,
+#slide14 .logo-item .logo-img.animate {
     animation: logoAppear 3s ease-out 0.5s both;
 }
 
@@ -597,35 +599,149 @@ body::before {
     height: 200px;
 }
 
-/* Posiciones específicas para cada materia - distribución desordenada */
-.subject-item:nth-child(1) {
-    top: 5%;
-    left: 10%;
-    transform: rotate(-5deg);
+/* DISTRIBUCIONES ESPECÍFICAS POR CANTIDAD DE ELEMENTOS - ALTA PRIORIDAD */
+
+/* Para 3 elementos (como Fundamentos, Ciencia de Datos, Ingeniería de Software) */
+#slide16 .subject-item:nth-child(1),
+#slide20 .subject-item:nth-child(1),
+#slide22 .subject-item:nth-child(1) {
+    top: 12% !important;
+    left: 15% !important;
+    transform: rotate(-10deg) !important;
 }
 
-.subject-item:nth-child(2) {
-    top: 15%;
-    right: 15%;
-    transform: rotate(8deg);
+#slide16 .subject-item:nth-child(2),
+#slide20 .subject-item:nth-child(2),
+#slide22 .subject-item:nth-child(2) {
+    top: 12% !important;
+    right: 15% !important;
+    transform: rotate(10deg) !important;
 }
 
-.subject-item:nth-child(3) {
-    bottom: 25%;
-    left: 20%;
-    transform: rotate(-12deg);
+#slide16 .subject-item:nth-child(3),
+#slide20 .subject-item:nth-child(3),
+#slide22 .subject-item:nth-child(3) {
+    bottom: 15% !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(-8deg) !important;
 }
 
-.subject-item:nth-child(4) {
-    top: 45%;
-    right: 8%;
-    transform: rotate(15deg);
+/* Para 4 elementos (como Segundo Ciclo, Integración Profesional, Capacidades Analíticas) */
+#slide4 .subject-item:nth-child(1),
+#slide6 .subject-item:nth-child(1),
+#slide10 .subject-item:nth-child(1),
+#slide18 .subject-item:nth-child(1) {
+    top: 8% !important;
+    left: 12% !important;
+    transform: rotate(-8deg) !important;
 }
 
-.subject-item:nth-child(5) {
-    bottom: 10%;
-    right: 35%;
-    transform: rotate(-8deg);
+#slide4 .subject-item:nth-child(2),
+#slide6 .subject-item:nth-child(2),
+#slide10 .subject-item:nth-child(2),
+#slide18 .subject-item:nth-child(2) {
+    top: 8% !important;
+    right: 12% !important;
+    transform: rotate(8deg) !important;
+}
+
+#slide4 .subject-item:nth-child(3),
+#slide6 .subject-item:nth-child(3),
+#slide10 .subject-item:nth-child(3),
+#slide18 .subject-item:nth-child(3) {
+    bottom: 12% !important;
+    left: 15% !important;
+    transform: rotate(-12deg) !important;
+}
+
+#slide4 .subject-item:nth-child(4),
+#slide6 .subject-item:nth-child(4),
+#slide10 .subject-item:nth-child(4),
+#slide18 .subject-item:nth-child(4) {
+    bottom: 12% !important;
+    right: 15% !important;
+    transform: rotate(12deg) !important;
+}
+
+/* Para 5 elementos (como Tercer Ciclo) - 3 arriba, 2 abajo */
+#slide8 .subject-item:nth-child(1) {
+    top: 8% !important;
+    left: 10% !important;
+    transform: rotate(-8deg) !important;
+}
+
+#slide8 .subject-item:nth-child(2) {
+    top: 8% !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(5deg) !important;
+}
+
+#slide8 .subject-item:nth-child(3) {
+    top: 8% !important;
+    right: 10% !important;
+    transform: rotate(8deg) !important;
+}
+
+#slide8 .subject-item:nth-child(4) {
+    bottom: 15% !important;
+    left: 25% !important;
+    transform: rotate(-12deg) !important;
+}
+
+#slide8 .subject-item:nth-child(5) {
+    bottom: 15% !important;
+    right: 25% !important;
+    transform: rotate(12deg) !important;
+}
+
+/* Para 6 elementos - Incumbencias (distribución en 3 columnas) */
+#slide13 .subject-item:nth-child(1),
+#slide26 .subject-item:nth-child(1) {
+    top: 8% !important;
+    left: 8% !important;
+    transform: rotate(-8deg) scale(0.9) !important;
+}
+
+#slide13 .subject-item:nth-child(2),
+#slide26 .subject-item:nth-child(2) {
+    top: 8% !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(5deg) scale(0.9) !important;
+}
+
+#slide13 .subject-item:nth-child(3),
+#slide26 .subject-item:nth-child(3) {
+    top: 8% !important;
+    right: 8% !important;
+    transform: rotate(8deg) scale(0.9) !important;
+}
+
+#slide13 .subject-item:nth-child(4),
+#slide26 .subject-item:nth-child(4) {
+    bottom: 8% !important;
+    left: 8% !important;
+    transform: rotate(-5deg) scale(0.9) !important;
+}
+
+#slide13 .subject-item:nth-child(5),
+#slide26 .subject-item:nth-child(5) {
+    bottom: 8% !important;
+    left: 50% !important;
+    transform: translateX(-50%) rotate(-5deg) scale(0.9) !important;
+}
+
+#slide13 .subject-item:nth-child(6),
+#slide26 .subject-item:nth-child(6) {
+    bottom: 8% !important;
+    right: 8% !important;
+    transform: rotate(5deg) scale(0.9) !important;
+}
+
+
+
+/* Número de slide oculto */
+.slide-number {
+    display: none;
 }
 
 /* Diferentes tamaños para crear variedad */
@@ -652,6 +768,11 @@ body::before {
 .subject-item:nth-child(5) {
     width: 340px;
     height: 210px;
+}
+
+.subject-item:nth-child(6) {
+    width: 310px;
+    height: 195px;
 }
 
 .subject-item::before {
@@ -689,6 +810,9 @@ body::before {
 }
 .subject-item:nth-child(5).animate { 
     animation: subjectAppear5 2s ease-out 6.5s both;
+}
+.subject-item:nth-child(6).animate { 
+    animation: subjectAppear6 2s ease-out 8.0s both;
 }
 
 @keyframes subjectAppear1 {
@@ -752,6 +876,19 @@ body::before {
     to {
         opacity: 1;
         transform: translateY(0) scale(1) rotate(-8deg);
+        filter: blur(0px) hue-rotate(0deg);
+    }
+}
+
+@keyframes subjectAppear6 {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8) rotate(10deg);
+        filter: blur(10px) hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(10deg);
         filter: blur(0px) hue-rotate(0deg);
     }
 }
@@ -1154,28 +1291,33 @@ body::before {
     
     /* Ajustar posiciones para móvil */
     .subject-item:nth-child(1) {
-        top: 3% !important;
-        left: 8% !important;
+        top: 5% !important;
+        left: 5% !important;
     }
     
     .subject-item:nth-child(2) {
-        top: 18% !important;
-        right: 12% !important;
+        top: 20% !important;
+        right: 8% !important;
     }
     
     .subject-item:nth-child(3) {
-        bottom: 22% !important;
-        left: 15% !important;
+        bottom: 30% !important;
+        left: 10% !important;
     }
     
     .subject-item:nth-child(4) {
-        top: 38% !important;
-        right: 6% !important;
+        top: 45% !important;
+        right: 5% !important;
     }
     
     .subject-item:nth-child(5) {
-        bottom: 8% !important;
-        right: 25% !important;
+        bottom: 12% !important;
+        right: 20% !important;
+    }
+    
+    .subject-item:nth-child(6) {
+        top: 70% !important;
+        left: 3% !important;
     }
     
     .subject-item {
@@ -1268,28 +1410,33 @@ body::before {
     
     /* Ajustar posiciones para móvil pequeño */
     .subject-item:nth-child(1) {
-        top: 2% !important;
-        left: 6% !important;
+        top: 3% !important;
+        left: 4% !important;
     }
     
     .subject-item:nth-child(2) {
-        top: 12% !important;
-        right: 10% !important;
+        top: 15% !important;
+        right: 6% !important;
     }
     
     .subject-item:nth-child(3) {
-        bottom: 18% !important;
-        left: 12% !important;
+        bottom: 25% !important;
+        left: 8% !important;
     }
     
     .subject-item:nth-child(4) {
-        top: 32% !important;
-        right: 4% !important;
+        top: 40% !important;
+        right: 3% !important;
     }
     
     .subject-item:nth-child(5) {
-        bottom: 6% !important;
-        right: 22% !important;
+        bottom: 8% !important;
+        right: 18% !important;
+    }
+    
+    .subject-item:nth-child(6) {
+        top: 75% !important;
+        left: 2% !important;
     }
     
     .subject-title {
@@ -1360,28 +1507,33 @@ body::before {
     
     /* Ajustar posiciones para TV */
     .subject-item:nth-child(1) {
-        top: 6% !important;
-        left: 10% !important;
+        top: 8% !important;
+        left: 8% !important;
     }
     
     .subject-item:nth-child(2) {
-        top: 18% !important;
-        right: 15% !important;
+        top: 15% !important;
+        right: 12% !important;
     }
     
     .subject-item:nth-child(3) {
-        bottom: 24% !important;
-        left: 18% !important;
+        bottom: 30% !important;
+        left: 15% !important;
     }
     
     .subject-item:nth-child(4) {
-        top: 38% !important;
-        right: 10% !important;
+        top: 45% !important;
+        right: 8% !important;
     }
     
     .subject-item:nth-child(5) {
-        bottom: 10% !important;
-        right: 28% !important;
+        bottom: 12% !important;
+        right: 22% !important;
+    }
+    
+    .subject-item:nth-child(6) {
+        top: 60% !important;
+        left: 5% !important;
     }
     
     .subject-item {
@@ -1433,9 +1585,11 @@ body::before {
         filter: drop-shadow(0 0 50px rgba(0, 255, 255, 1));
     }
     
-    /* Large logos for slides 2 and 12 on TV */
+    /* Large logos for slides 2, 12, 13 and 14 on TV */
     #slide2 .logo-item .logo-img,
-    #slide12 .logo-item .logo-img {
+    #slide12 .logo-item .logo-img,
+    #slide13 .logo-item .logo-img,
+    #slide14 .logo-item .logo-img {
         width: 95vw;
         height: 95vh;
         filter: drop-shadow(0 0 60px rgba(0, 255, 255, 1));
@@ -1495,28 +1649,33 @@ body::before {
     
     /* Ajustar posiciones para 4K TV */
     .subject-item:nth-child(1) {
-        top: 5% !important;
-        left: 8% !important;
+        top: 6% !important;
+        left: 6% !important;
     }
     
     .subject-item:nth-child(2) {
-        top: 16% !important;
-        right: 12% !important;
+        top: 12% !important;
+        right: 10% !important;
     }
     
     .subject-item:nth-child(3) {
-        bottom: 22% !important;
-        left: 15% !important;
+        bottom: 28% !important;
+        left: 12% !important;
     }
     
     .subject-item:nth-child(4) {
-        top: 35% !important;
-        right: 8% !important;
+        top: 42% !important;
+        right: 6% !important;
     }
     
     .subject-item:nth-child(5) {
-        bottom: 8% !important;
-        right: 25% !important;
+        bottom: 10% !important;
+        right: 20% !important;
+    }
+    
+    .subject-item:nth-child(6) {
+        top: 58% !important;
+        left: 4% !important;
     }
     
     .subject-item {
@@ -1594,7 +1753,8 @@ body::before {
 }
 
 /* Specific styles for single logo in slide 12 */
-#slide12 .logo-item .logo-img {
+#slide12 .logo-item .logo-img,
+#slide13 .logo-item .logo-img {
     width: 90vw;
     height: 90vh;
     object-fit: contain;
@@ -2135,4 +2295,6 @@ body::before {
         max-width: 1000px;
     }
 }
+
+/* Distribuciones específicas eliminadas - ahora están al principio del archivo */
 
