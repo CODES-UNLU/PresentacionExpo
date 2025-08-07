@@ -568,14 +568,16 @@ body::before {
 
 /* Subjects Container Styles */
 .subjects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    max-width: 1400px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .subject-item {
+    position: absolute;
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.05));
     border-radius: 20px;
     border: 2px solid rgba(0, 255, 255, 0.3);
@@ -584,7 +586,6 @@ body::before {
     padding: 2.5rem;
     text-align: center;
     transition: all 0.4s ease;
-    position: relative;
     overflow: hidden;
     opacity: 0;
     transform: translateY(50px) scale(0.8);
@@ -592,6 +593,65 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 300px;
+    height: 200px;
+}
+
+/* Posiciones específicas para cada materia - distribución desordenada */
+.subject-item:nth-child(1) {
+    top: 5%;
+    left: 10%;
+    transform: rotate(-5deg);
+}
+
+.subject-item:nth-child(2) {
+    top: 15%;
+    right: 15%;
+    transform: rotate(8deg);
+}
+
+.subject-item:nth-child(3) {
+    bottom: 25%;
+    left: 20%;
+    transform: rotate(-12deg);
+}
+
+.subject-item:nth-child(4) {
+    top: 45%;
+    right: 8%;
+    transform: rotate(15deg);
+}
+
+.subject-item:nth-child(5) {
+    bottom: 10%;
+    right: 35%;
+    transform: rotate(-8deg);
+}
+
+/* Diferentes tamaños para crear variedad */
+.subject-item:nth-child(1) {
+    width: 320px;
+    height: 180px;
+}
+
+.subject-item:nth-child(2) {
+    width: 280px;
+    height: 220px;
+}
+
+.subject-item:nth-child(3) {
+    width: 350px;
+    height: 200px;
+}
+
+.subject-item:nth-child(4) {
+    width: 300px;
+    height: 190px;
+}
+
+.subject-item:nth-child(5) {
+    width: 340px;
+    height: 210px;
 }
 
 .subject-item::before {
@@ -609,31 +669,89 @@ body::before {
     left: 100%;
 }
 
-.subject-item:nth-child(1).animate { 
-    animation: subjectAppear 2s ease-out 0.5s both;
-}
-.subject-item:nth-child(2).animate { 
-    animation: subjectAppear 2s ease-out 2.0s both;
-}
-.subject-item:nth-child(3).animate { 
-    animation: subjectAppear 2s ease-out 3.5s both;
-}
-.subject-item:nth-child(4).animate { 
-    animation: subjectAppear 2s ease-out 5.0s both;
-}
-.subject-item:nth-child(5).animate { 
-    animation: subjectAppear 2s ease-out 6.5s both;
+.subject-item:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+    z-index: 10;
 }
 
-@keyframes subjectAppear {
+.subject-item:nth-child(1).animate { 
+    animation: subjectAppear1 2s ease-out 0.5s both;
+}
+.subject-item:nth-child(2).animate { 
+    animation: subjectAppear2 2s ease-out 2.0s both;
+}
+.subject-item:nth-child(3).animate { 
+    animation: subjectAppear3 2s ease-out 3.5s both;
+}
+.subject-item:nth-child(4).animate { 
+    animation: subjectAppear4 2s ease-out 5.0s both;
+}
+.subject-item:nth-child(5).animate { 
+    animation: subjectAppear5 2s ease-out 6.5s both;
+}
+
+@keyframes subjectAppear1 {
     from {
         opacity: 0;
-        transform: translateY(50px) scale(0.8);
+        transform: translateY(50px) scale(0.8) rotate(-5deg);
         filter: blur(10px) hue-rotate(180deg);
     }
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) rotate(-5deg);
+        filter: blur(0px) hue-rotate(0deg);
+    }
+}
+
+@keyframes subjectAppear2 {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8) rotate(8deg);
+        filter: blur(10px) hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(8deg);
+        filter: blur(0px) hue-rotate(0deg);
+    }
+}
+
+@keyframes subjectAppear3 {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8) rotate(-12deg);
+        filter: blur(10px) hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(-12deg);
+        filter: blur(0px) hue-rotate(0deg);
+    }
+}
+
+@keyframes subjectAppear4 {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8) rotate(15deg);
+        filter: blur(10px) hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(15deg);
+        filter: blur(0px) hue-rotate(0deg);
+    }
+}
+
+@keyframes subjectAppear5 {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8) rotate(-8deg);
+        filter: blur(10px) hue-rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(-8deg);
         filter: blur(0px) hue-rotate(0deg);
     }
 }
@@ -1024,8 +1142,40 @@ body::before {
     }
     
     .subjects-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        height: 70vh;
+        max-width: 100%;
+    }
+    
+    .subject-item {
+        width: 250px !important;
+        height: 150px !important;
+        padding: 1.5rem;
+    }
+    
+    /* Ajustar posiciones para móvil */
+    .subject-item:nth-child(1) {
+        top: 3% !important;
+        left: 8% !important;
+    }
+    
+    .subject-item:nth-child(2) {
+        top: 18% !important;
+        right: 12% !important;
+    }
+    
+    .subject-item:nth-child(3) {
+        bottom: 22% !important;
+        left: 15% !important;
+    }
+    
+    .subject-item:nth-child(4) {
+        top: 38% !important;
+        right: 6% !important;
+    }
+    
+    .subject-item:nth-child(5) {
+        bottom: 8% !important;
+        right: 25% !important;
     }
     
     .subject-item {
@@ -1105,9 +1255,41 @@ body::before {
         padding: 0 0.5rem;
     }
     
+    .subjects-container {
+        height: 60vh;
+    }
+    
     .subject-item {
-        padding: 1.5rem;
+        width: 200px !important;
+        height: 120px !important;
+        padding: 1rem;
         min-height: 120px;
+    }
+    
+    /* Ajustar posiciones para móvil pequeño */
+    .subject-item:nth-child(1) {
+        top: 2% !important;
+        left: 6% !important;
+    }
+    
+    .subject-item:nth-child(2) {
+        top: 12% !important;
+        right: 10% !important;
+    }
+    
+    .subject-item:nth-child(3) {
+        bottom: 18% !important;
+        left: 12% !important;
+    }
+    
+    .subject-item:nth-child(4) {
+        top: 32% !important;
+        right: 4% !important;
+    }
+    
+    .subject-item:nth-child(5) {
+        bottom: 6% !important;
+        right: 22% !important;
     }
     
     .subject-title {
@@ -1165,9 +1347,41 @@ body::before {
     }
     
     .subjects-container {
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        gap: 3rem;
-        max-width: 1800px;
+        height: 85vh;
+        max-width: 2000px;
+    }
+    
+    .subject-item {
+        width: 400px !important;
+        height: 250px !important;
+        padding: 3rem;
+        min-height: 250px;
+    }
+    
+    /* Ajustar posiciones para TV */
+    .subject-item:nth-child(1) {
+        top: 6% !important;
+        left: 10% !important;
+    }
+    
+    .subject-item:nth-child(2) {
+        top: 18% !important;
+        right: 15% !important;
+    }
+    
+    .subject-item:nth-child(3) {
+        bottom: 24% !important;
+        left: 18% !important;
+    }
+    
+    .subject-item:nth-child(4) {
+        top: 38% !important;
+        right: 10% !important;
+    }
+    
+    .subject-item:nth-child(5) {
+        bottom: 10% !important;
+        right: 28% !important;
     }
     
     .subject-item {
@@ -1268,9 +1482,41 @@ body::before {
     }
     
     .subjects-container {
-        grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
-        gap: 4rem;
-        max-width: 2400px;
+        height: 90vh;
+        max-width: 2800px;
+    }
+    
+    .subject-item {
+        width: 500px !important;
+        height: 320px !important;
+        padding: 4rem;
+        min-height: 320px;
+    }
+    
+    /* Ajustar posiciones para 4K TV */
+    .subject-item:nth-child(1) {
+        top: 5% !important;
+        left: 8% !important;
+    }
+    
+    .subject-item:nth-child(2) {
+        top: 16% !important;
+        right: 12% !important;
+    }
+    
+    .subject-item:nth-child(3) {
+        bottom: 22% !important;
+        left: 15% !important;
+    }
+    
+    .subject-item:nth-child(4) {
+        top: 35% !important;
+        right: 8% !important;
+    }
+    
+    .subject-item:nth-child(5) {
+        bottom: 8% !important;
+        right: 25% !important;
     }
     
     .subject-item {
@@ -1338,17 +1584,13 @@ body::before {
     }
 }
 
-/* Specific slide adjustments for 5 items in slide 8 */
+/* Specific slide adjustments for 5 items in slide 8 - now using absolute positioning */
 #slide8 .subjects-container {
-    grid-template-columns: repeat(3, 1fr);
+    height: 85vh;
 }
 
-#slide8 .subject-item:nth-child(4) {
-    grid-column: 2;
-}
-
-#slide8 .subject-item:nth-child(5) {
-    grid-column: 3;
+#slide8 .subject-item {
+    /* Las posiciones ya están definidas globalmente */
 }
 
 /* Specific styles for single logo in slide 12 */
