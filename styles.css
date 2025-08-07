@@ -684,13 +684,13 @@ body::before {
 
 #slide8 .subject-item:nth-child(4) {
     bottom: 15% !important;
-    left: 25% !important;
+    left: 15% !important;
     transform: rotate(-12deg) !important;
 }
 
 #slide8 .subject-item:nth-child(5) {
     bottom: 15% !important;
-    right: 25% !important;
+    right: 15% !important;
     transform: rotate(12deg) !important;
 }
 
@@ -2297,4 +2297,138 @@ body::before {
 }
 
 /* Distribuciones específicas eliminadas - ahora están al principio del archivo */
+
+/* QR Corner Styles */
+.qr-corner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.qr-title-corner {
+    background: linear-gradient(135deg, 
+        rgba(0, 255, 255, 0.9) 0%, 
+        rgba(255, 0, 255, 0.9) 100%);
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 255, 255, 0.3);
+    border: 1px solid rgba(0, 255, 255, 0.8);
+    min-width: 100px;
+    transition: all 0.3s ease;
+}
+
+.qr-corner-img {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(0, 255, 255, 0.6);
+    border-radius: 10px;
+    padding: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.qr-corner:hover .qr-title-corner {
+    background: linear-gradient(135deg, 
+        rgba(0, 255, 255, 1) 0%, 
+        rgba(255, 0, 255, 1) 100%);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.qr-corner:hover .qr-corner-img {
+    transform: scale(1.1);
+    border-color: rgba(0, 255, 255, 0.9);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+
+
+/* Responsive QR Corner */
+@media (max-width: 768px) {
+    .qr-corner {
+        bottom: 15px;
+        right: 15px;
+        gap: 6px;
+    }
+    
+    .qr-title-corner {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+        min-width: 80px;
+        border-radius: 4px;
+    }
+    
+    .qr-corner-img {
+        width: 80px;
+        height: 80px;
+        padding: 6px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .qr-corner {
+        bottom: 30px;
+        right: 30px;
+        gap: 12px;
+    }
+    
+    .qr-title-corner {
+        font-size: 1rem;
+        padding: 6px 12px;
+        min-width: 140px;
+        border-radius: 8px;
+        border-width: 2px;
+    }
+    
+    .qr-corner-img {
+        width: 140px;
+        height: 140px;
+        padding: 12px;
+        border-radius: 15px;
+        border-width: 3px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .qr-corner {
+        bottom: 40px;
+        right: 40px;
+        gap: 15px;
+    }
+    
+    .qr-title-corner {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+        min-width: 180px;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+    
+    .qr-corner-img {
+        width: 180px;
+        height: 180px;
+        padding: 15px;
+        border-radius: 20px;
+        border-width: 4px;
+    }
+}
 
